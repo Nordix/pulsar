@@ -237,7 +237,15 @@ public class AlluxioSinkTest {
         LocalAlluxioCluster cluster = new LocalAlluxioCluster();
         cluster.initConfiguration(getTestName(getClass().getSimpleName(), "test"));
         Configuration.set(PropertyKey.USER_FILE_WRITE_TYPE_DEFAULT, WriteType.MUST_CACHE);
-        cluster.start();
+        // Increased wait timeout to avoid flakiness
+        try {
+            cluster.start();
+        } catch (java.util.concurrent.TimeoutException e) {
+            log.warn("Alluxio master startup timed out once; retrying with extended timeout...");
+            cluster.stop();
+            System.setProperty("alluxio.test.wait.timeout", "400000");
+            cluster.start();
+        }
         return cluster;
     }
 
