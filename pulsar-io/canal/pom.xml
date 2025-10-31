@@ -97,6 +97,11 @@
                     <groupId>ch.qos.logback</groupId>
                     <artifactId>*</artifactId>
                 </exclusion>
+                <!-- Exclude vulnerable commons-lang -->
+                <exclusion>
+                    <groupId>commons-lang</groupId>
+                    <artifactId>commons-lang</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -112,6 +117,11 @@
                     <groupId>org.springframework</groupId>
                     <artifactId>*</artifactId>
                 </exclusion>
+                <!-- Exclude vulnerable commons-lang -->
+                <exclusion>
+                    <groupId>commons-lang</groupId>
+                    <artifactId>commons-lang</artifactId>
+                </exclusion>
             </exclusions>
         </dependency>
 
@@ -119,6 +129,12 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.14.0</version> <!-- latest stable version -->
+        </dependency>
+
     </dependencies>
 
     <build>
