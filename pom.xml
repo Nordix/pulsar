@@ -1395,6 +1395,10 @@ flexible messaging model and an intuitive client API.</description>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk15on</artifactId>
           </exclusion>
+          <exclusion>
+            <groupId>com.nimbusds</groupId>
+            <artifactId>nimbus-jose-jwt</artifactId>
+          </exclusion>
         </exclusions>
       </dependency>
       <dependency>
