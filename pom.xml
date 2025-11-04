@@ -372,6 +372,7 @@ flexible messaging model and an intuitive client API.</description>
 
     <commons-beanutils.version>1.11.0</commons-beanutils.version>
     <commons-configuration2.version>2.12.0</commons-configuration2.version>
+    <http2-common.version>10.0.26</http2-common.version>
   </properties>
 
   <dependencyManagement>
